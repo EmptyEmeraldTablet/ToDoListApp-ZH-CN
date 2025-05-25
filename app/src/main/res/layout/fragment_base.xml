@@ -20,9 +20,9 @@
                 android:layout_marginStart="30dp"
                 android:text="@string/categories"
                 android:textAllCaps="true"
-                android:textStyle="bold"
                 android:textColor="#808080"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/categoriesRecyclerView"

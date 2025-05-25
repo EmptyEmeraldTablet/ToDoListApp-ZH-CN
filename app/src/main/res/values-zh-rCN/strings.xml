@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">To Do List</string>
+    <!-- TODO: 移除或更改此占位文本 -->
+    <string name="hello_blank_fragment">空白片段</string>
+    <string name="title_activity_main2">主活动2</string>
+    <string name="navigation_drawer_open">打开导航抽屉</string>
+    <string name="navigation_drawer_close">关闭导航抽屉</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">导航头部</string>
+    <string name="action_settings">设置</string>
+
+    <string name="menu_home">首页</string>
+    <string name="menu_gallery">相册</string>
+    <string name="menu_slideshow">幻灯片</string>
+    <string name="add_category">添加分类</string>
+    <string name="enter_category">输入分类名称</string>
+    <string name="category_color">分类颜色</string>
+    <string name="add_color">添加颜色</string>
+    <string name="categories">分类</string>
+    <string name="tasks_to_do">待办任务</string>
+    <string name="completed_tasks">已完成任务</string>
+    <string name="create_task">创建任务</string>
+    <string name="enter_task_information">输入任务信息</string>
+    <string name="due_date">截止日期</string>
+    <string name="completed">已完成</string>
+    <string name="priority">优先级</string>
+    <string name="low">低</string>
+    <string name="medium">中</string>
+    <string name="high">高</string>
+    <string name="category">分类</string>
+    <string name="add_new_category">+ 添加新分类</string>
+    <string name="new_task">新建任务</string>
+    <string name="settings">设置</string>
+    <string name="notification">通知</string>
+    <string name="low_priority_tasks">低优先级任务</string>
+    <string name="medium_priority_tasks">中优先级任务</string>
+    <string name="high_priority_tasks">高优先级任务</string>
+    <string name="general">通用</string>
+    <string name="rate_the_app">评价应用</string>
+</resources>

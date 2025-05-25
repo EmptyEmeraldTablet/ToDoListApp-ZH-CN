@@ -145,10 +145,16 @@ class NewTaskFragment : Fragment() {
     private fun listenToCategoryClick(chipGroup: ChipGroup, i: List<Int>) {
         val id = i[0]
         val chip = chipGroup.findViewById(id) as Chip
-        if(chip.text.toString() == "+ Add New Category"){
+        val addCategoryText = getString(R.string.add_new_category)
+        if (chip.text.toString() == addCategoryText) {
             displayCategoryChooseDialog()
             isCategorySelected = false
-        }else {
+        }
+//        if(chip.text.toString() == "+ Add New Category"){
+//            displayCategoryChooseDialog()
+//            isCategorySelected = false
+//        }
+        else {
             taskInfo.category = chip.text.toString()
             categoryInfo.categoryInformation = chip.text.toString()
             categoryInfo.color = chip.tag.toString()

@@ -6,6 +6,7 @@ import android.graphics.Color
 import android.view.View
 import androidx.core.widget.CompoundButtonCompat
 import androidx.databinding.BindingAdapter
+import com.example.todolist.R
 import com.example.todolist.data.util.DateToString
 import com.google.android.material.checkbox.MaterialCheckBox
 import com.google.android.material.chip.Chip
@@ -14,9 +15,10 @@ import java.util.*
 
 @SuppressLint("SetTextI18n")
 @BindingAdapter("count")
-fun setCount(materialTextView: MaterialTextView, count : Int){
-    if(count==1)materialTextView.text = "$count Task"
-    else materialTextView.text = "$count Tasks"
+fun setCount(materialTextView: MaterialTextView, count: Int) {
+    val resources = materialTextView.context.resources
+    val text = resources.getQuantityString(R.plurals.task_count, count, count)
+    materialTextView.text = text
 }
 
 @BindingAdapter("view_color")
@@ -33,17 +35,19 @@ fun setCheckStatus(materialCheckBox: MaterialCheckBox, status : Boolean, color: 
 
 @SuppressLint("SetTextI18n")
 @BindingAdapter("set_date")
-fun setDate(dueDate: MaterialTextView, date : Date){
-    dueDate.text = "Due : " + DateToString.convertDateToString(date)
+fun setDate(dueDate: MaterialTextView, date: Date) {
+    val prefix = dueDate.context.getString(R.string.due_date_prefix)
+    dueDate.text = prefix + DateToString.convertDateToString(date)
 }
 
 @SuppressLint("SetTextI18n")
 @BindingAdapter("priority", "view_color")
-fun setPriority(chip:Chip, priority : Int, color:String){
-    when(priority){
-        0->chip.text = "Low"
-        1->chip.text = "Medium"
-        else -> chip.text = "High"
+fun setPriority(chip: Chip, priority: Int, color: String) {
+    val priorityText = when(priority) {
+        0 -> chip.context.getString(R.string.low_priority)
+        1 -> chip.context.getString(R.string.medium_priority)
+        else -> chip.context.getString(R.string.high_priority)
     }
+    chip.text = priorityText
     chip.chipStrokeColor = ColorStateList.valueOf(Color.parseColor(color))
 }

@@ -39,4 +39,19 @@
     <string name="high_priority_tasks">高优先级任务</string>
     <string name="general">通用</string>
     <string name="rate_the_app">评价应用</string>
+    <string name="due_date_prefix">截止时间：</string>
+    <string name="low_priority">低</string>
+    <string name="medium_priority">中</string>
+    <string name="high_priority">高</string>
+    <plurals name="task_count">
+        <item quantity="other">%d 个任务</item>
+    </plurals>
+    <string name="dark_theme">深色模式</string>
+    <string name="toast_arlarm__please_add_description__">请添加任务描述</string>
+    <string name="task_reminder">任务提醒</string>
+    <string name="deleted_successfully">删除成功</string>
+    <string name="undo">撤销操作</string>
+    <string name="notification_for_tasks">任务通知</string>
+    <string name="notification_title">任务提醒</string>
+    <string name="action_completed">标记完成</string>
 </resources>

@@ -233,7 +233,7 @@ class NewTaskFragment : Fragment() {
         val date = Date()
         Log.d("DATA", taskInfo.date.seconds.toString())
         taskInfo.description = binding.editText.text.toString()
-        if(taskInfo.description.isNullOrBlank())Snackbar.make(binding.root, "Please add description", Snackbar.LENGTH_SHORT).setAction("Action", null).show()
+        if(taskInfo.description.isNullOrBlank())Snackbar.make(binding.root, R.string.toast_arlarm__please_add_description__, Snackbar.LENGTH_SHORT).setAction("Action", null).show()
         else if(taskInfo.category.isNullOrBlank() || categoryInfo.categoryInformation.isNullOrBlank() || !isCategorySelected)Snackbar.make(binding.root, "Please select a category", Snackbar.LENGTH_SHORT).setAction("Action", null).show()
         else {
             if(binding.fab.text.equals("Update")) {

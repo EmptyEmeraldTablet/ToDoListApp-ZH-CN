@@ -38,4 +38,28 @@
     <string name="high_priority_tasks">High priority tasks</string>
     <string name="general">General</string>
     <string name="rate_the_app">Rate the app</string>
+    <!-- 复数任务数量 -->
+    <plurals name="task_count">
+        <item quantity="one">%d Task</item>
+        <item quantity="other">%d Tasks</item>
+    </plurals>
+
+    <!-- 截止日期前缀 -->
+    <string name="due_date_prefix">Due: </string>
+
+    <!-- 优先级 -->
+    <string name="low_priority">Low</string>
+    <string name="medium_priority">Medium</string>
+    <string name="high_priority">High</string>
+    <string name="dark_theme">Dark Theme</string>
+    <string name="toast_arlarm__please_add_description__">Please add description</string>
+    <string name="task_reminder">Task Reminder</string>
+    <string name="deleted_successfully">Deleted Successfully</string>
+    <string name="undo">Undo</string>
+    <string name="notification_for_tasks">Notification for Tasks</string>
+    <!-- 通知标题 -->
+    <string name="notification_title">Task Reminder</string>
+
+    <!-- 操作按钮文本 -->
+    <string name="action_completed">Completed</string>
 </resources>

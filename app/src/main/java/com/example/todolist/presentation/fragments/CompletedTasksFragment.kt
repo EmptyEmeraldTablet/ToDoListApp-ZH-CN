@@ -87,9 +87,9 @@ class CompletedTasksFragment : ParentFragment() {
             val categoryInfo = adapter.differ.currentList[position]?.categoryInfo?.get(0)
             if (taskInfo != null && categoryInfo!= null) {
                 deleteTask(viewModel, taskInfo, categoryInfo)
-                Snackbar.make(binding.root,"Deleted Successfully",Snackbar.LENGTH_LONG)
+                Snackbar.make(binding.root,R.string.deleted_successfully,Snackbar.LENGTH_LONG)
                     .apply {
-                        setAction("Undo") {
+                        setAction(R.string.undo) {
                             viewModel.insertTaskAndCategory(taskInfo, categoryInfo)
                         }
                         show()

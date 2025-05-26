@@ -71,13 +71,15 @@ class NewTaskFragment : Fragment() {
         loadAllCategories()
     }
 
-    private fun initUpdate(){
+    // 修改后的 initUpdate 方法
+    private fun initUpdate() {
         taskInfo = args.newTaskArg!!.taskInfo
         categoryInfo = args.newTaskArg!!.categoryInfo[0]
-        binding.fab.text = "Update"
+        binding.fab.text = getString(R.string.update) /* 资源引用 */
         colorString = categoryInfo.color
         prevTaskCategory = TaskCategoryInfo(
-            TaskInfo(taskInfo.id, taskInfo.description, taskInfo.date, taskInfo.priority, taskInfo.status, taskInfo.category),
+            TaskInfo(taskInfo.id, taskInfo.description, taskInfo.date,
+                taskInfo.priority, taskInfo.status, taskInfo.category),
             listOf(CategoryInfo(categoryInfo.categoryInformation, categoryInfo.color))
         )
         isCategorySelected = true
@@ -132,13 +134,14 @@ class NewTaskFragment : Fragment() {
     }
 
     private fun changePriority(chipGroup: ChipGroup, i: List<Int>) {
+        val context = chipGroup.context
         val id = i[0]
-        val chip = chipGroup.findViewById(id) as Chip
+        val chip = chipGroup.findViewById<Chip>(id)
 
-        when (chip.text) {
-            "Low" -> taskInfo.priority = 0
-            "Medium" -> taskInfo.priority = 1
-            else -> taskInfo.priority = 2
+        taskInfo.priority = when (chip.text) {
+            context.getString(R.string.low) -> 0
+            context.getString(R.string.medium) -> 1
+            else -> 2
         }
     }
 
@@ -176,7 +179,7 @@ class NewTaskFragment : Fragment() {
         addColor.setOnClickListener { displayColorPickerDialog() }
         addCategory.setOnClickListener {
             if(editText.text.isNullOrBlank())
-                Snackbar.make(binding.root, "Please add category", Snackbar.LENGTH_SHORT).setAction("Action", null).show()
+                Snackbar.make(binding.root, R.string.please_add_category, Snackbar.LENGTH_SHORT).setAction("Action", null).show()
             else {
                 addNewCategoryChip(editText.text.toString())
             }
@@ -233,10 +236,10 @@ class NewTaskFragment : Fragment() {
         val date = Date()
         Log.d("DATA", taskInfo.date.seconds.toString())
         taskInfo.description = binding.editText.text.toString()
-        if(taskInfo.description.isNullOrBlank())Snackbar.make(binding.root, "Please add description", Snackbar.LENGTH_SHORT).setAction("Action", null).show()
-        else if(taskInfo.category.isNullOrBlank() || categoryInfo.categoryInformation.isNullOrBlank() || !isCategorySelected)Snackbar.make(binding.root, "Please select a category", Snackbar.LENGTH_SHORT).setAction("Action", null).show()
+        if(taskInfo.description.isNullOrBlank())Snackbar.make(binding.root, R.string.toast_arlarm__please_add_description__, Snackbar.LENGTH_SHORT).setAction("Action", null).show()
+        else if(taskInfo.category.isNullOrBlank() || categoryInfo.categoryInformation.isNullOrBlank() || !isCategorySelected)Snackbar.make(binding.root, R.string.please_select_a_category, Snackbar.LENGTH_SHORT).setAction("Action", null).show()
         else {
-            if(binding.fab.text.equals("Update")) {
+            if(binding.fab.text.equals(getString(R.string.update))) {
                 updateTask()
             }else {
                 val diff = (Date().time/1000) - Constants.sDate

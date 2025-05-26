@@ -145,11 +145,12 @@
             android:layout_gravity="bottom|end"
             android:layout_marginEnd="@dimen/fab_margin"
             android:layout_marginBottom="16dp"
-            android:text="@string/new_task"
             android:backgroundTint="@color/light_blue"
+            android:text="@string/new_task"
             app:icon="@drawable/ic_baseline_keyboard_arrow_up_24"
             app:iconGravity="end"
-            app:iconPadding="3dp" />
+            app:iconPadding="3dp"
+            tools:text="@string/update" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

@@ -33,11 +33,12 @@ class AlarmReceiver : BroadcastReceiver() {
             }
             val pendingIntent1: PendingIntent? =
                 taskInfo?.let { getBroadcast(p0, it.id,intent1,FLAG_UPDATE_CURRENT or FLAG_IMMUTABLE) }
-            val action1 : NotificationCompat.Action = NotificationCompat.Action.Builder(0,"Completed",pendingIntent1).build()
+            val actionText = p0?.getString(R.string.action_completed)  // 新增资源引用
+            val action1 = NotificationCompat.Action.Builder(0, actionText, pendingIntent1).build()  // 修改这里
 
             val notification = p0?.let {
                 NotificationCompat.Builder(it, "to_do_list")
-                    .setContentTitle("Task Reminder")
+                    .setContentTitle(it.getString(R.string.notification_title))  // 修改这里
                     .setContentText(taskInfo?.description)
                     .setSmallIcon(R.mipmap.ic_launcher)
                     .setAutoCancel(true)
